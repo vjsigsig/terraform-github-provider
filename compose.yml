@@ -1,0 +1,7 @@
+services:
+  terraform:
+    image: hashicorp/terraform:1.9
+    container_name: terraform-github-provider
+    volumes:
+      - ./src/:/app
+    working_dir: /app

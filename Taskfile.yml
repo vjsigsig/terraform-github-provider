@@ -1,0 +1,19 @@
+version: '3'
+
+tasks:
+  terraform:plan:
+    desc: "Run terraform plan"
+    cmds:
+      - "docker compose run --rm terraform plan -var-file=\"./employees.tfvars\""
+
+  terraform:apply:
+    desc: "Run terraform apply"
+    prompt: "terraform applyを実行します。よろしいですか？"
+    cmds:
+      - "docker compose run --rm terraform apply -var-file=\"./employees.tfvars\""
+
+  terraform:destroy:
+    desc: "Run terraform destroy"
+    prompt: "terraform destroyを実行します。よろしいですか？"
+    cmds:
+      - "docker compose run --rm terraform destroy -var-file=\"./employees.tfvars\""
